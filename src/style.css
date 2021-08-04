@@ -1,5 +1,12 @@
 body {
   background: burlywood;
 }
+body #container #memeContainer {
+  border: 1px solid black;
+}
+body #container #memeContainer img {
+  width: 50%;
+  height: 50%;
+}
 
 /*# sourceMappingURL=style.css.map */
