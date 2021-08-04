@@ -3,9 +3,28 @@ import ReactDOM from 'react-dom';
 import './style.css';
 import reportWebVitals from './reportWebVitals';
 
+
+
+function Generation(){
+
+  return <div>Generation</div>
+
+}
+
+
+function Meme(){
+
+  return <div>Meme</div>
+
+}
+
+
 function App(){
   return <div>
-    <h1>Hello</h1>
+    
+    <Generation/>
+    <Meme/>
+    
   </div>
 }
 
