@@ -100,6 +100,11 @@ function App(){
           imgRef.current.src = "";
           imgRef.current.alt = "Something went wrong";
           setMemeTitle("The Post is NSFW");
+          setDescriptionText("");
+          setOriginalLink("");
+          setSubredditText("To view NSFW content, turn of NSFW Filter");
+          setDownloadLink("");
+          setUpvotes("");
           return;
         }
       }
