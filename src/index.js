@@ -39,7 +39,7 @@ function Meme(props){
     <h2>{props.memeTitle}</h2>
     <p>{props.subredditText}<br/>
     {props.descriptionText}&nbsp;{props.upvotes}<br/>
-    <a href={props.originalLink}>{props.originalLink}</a><br/></p>
+    <a href={props.originalLink} target="_blank">{props.originalLink}</a><br/></p>
 
     <a href={props.downloadLink} target="_blank" rel="noreferrer">
       <img src="" alt="Meme be here" ref={props.imgRef}></img>
