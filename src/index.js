@@ -102,7 +102,7 @@ function App(){
           setMemeTitle("The Post is NSFW");
           setDescriptionText("");
           setOriginalLink("");
-          setSubredditText("To view NSFW content, turn of NSFW Filter");
+          setSubredditText("To view NSFW content, turn off NSFW Filter");
           setDownloadLink("");
           setUpvotes("");
           return;
