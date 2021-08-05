@@ -80,7 +80,6 @@ function App(){
 
     let apiUrl = "https://meme-api.herokuapp.com/gimme";
 
-    //apiUrl = subreddit==="" ? apiUrl : apiUrl + `/${subreddit}`;
 
     if(subreddit==="" && customSubreddit===""){
       console.log("hello")
