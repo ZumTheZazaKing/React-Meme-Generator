@@ -1,16 +1,95 @@
 body{
-    background: burlywood;
+    background: #1a1a1b;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 
     #container{
 
+        border: 2px solid rgb(68, 67, 67);
+        border-top:none;
+        text-align: center;
+        background-color: #212122;
+        color: white;
+        padding: 10px;
+        border-radius: 0 0 10px 10px;
+
+        h2{
+            font-family: Impact;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: black;
+        }
+
+        p, span{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #generation{
+            text-align: center;
+
+            p{
+                margin: 10px;
+            }
+
+            select{
+                padding: 5px;
+                border-radius: 10px;
+                outline: none;
+                border: none;
+                cursor: pointer;
+            }
+
+            input[type=text]{
+                padding: 5px;
+                border: none;
+                outline: none;
+            }
+
+            input[type=checkbox]{
+                cursor: pointer;
+            }
+
+            input[type=submit]{
+                padding: 5px 10px;
+                border: none;
+                outline: none;
+                border-radius: 50px;
+                cursor: pointer;
+                background-color: rgb(78, 78, 238);
+                color: white;
+            }
+
+        }
 
         #memeContainer{
-            border: 1px solid black;
+            border: 2px solid rgb(68, 67, 67);
+            text-align: center;
+            border-radius: 5px;
+            background-color: #1d1d1d;
+
+            p{
+                line-height: 1.5;
+            }
+
+            h2{
+                font-family: Arial, Helvetica, sans-serif;
+                -webkit-text-stroke-color: none;
+                -webkit-text-stroke-width: 0px;
+                font-weight: 300;
+            }
+
+            a{
+                color: rgb(104, 104, 243);
+                text-decoration: none;
+                font-family: Arial, Helvetica, sans-serif;
+            }
 
             img{
-                width: 50%;
-                height: 50%;
+                width: 80%;
+                height: 80%;
             }
 
         }

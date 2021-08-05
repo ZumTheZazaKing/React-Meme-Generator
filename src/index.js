@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 
 function Generation(props){
 
-  return <div>
+  return <div id="generation">
     <form onSubmit={props.generateMeme}>
     <select id="select" value={props.subreddit} onChange={props.handleChange}>
       <option value="">Random (Default)</option>
@@ -21,10 +21,11 @@ function Generation(props){
       <option value="comedyheaven">comedyheaven</option>
     </select>
     <br/>
+    <p>Or</p>
     <input type="text" placeholder="Custom subreddit" value={props.customSubreddit} onChange={props.handleCustomChange}/>
-    <br/>
-    <input type="checkbox" onChange={props.handleNsfwChange}/>NSFW Filter
-    <br/>
+    <br/><br/>
+    <input type="checkbox" onChange={props.handleNsfwChange}/><span>NSFW Filter</span>
+    <br/><br/>
     <input type="submit" value="Generate"/>
     </form>
   </div>
@@ -41,7 +42,7 @@ function Meme(props){
     <a href={props.originalLink}>{props.originalLink}</a><br/></p>
 
     <a href={props.downloadLink} target="_blank" rel="noreferrer">
-      <img src="" alt="Meme" ref={props.imgRef}></img>
+      <img src="" alt="Meme be here" ref={props.imgRef}></img>
     </a>
   </div>
 
@@ -112,6 +113,13 @@ function App(){
   }
 
   return <div id="container">
+
+    <h2>Meme Generator</h2>
+    <p>
+      Generate a meme from the subreddits in the dropdown menu or enter a custom subreddit to generate from!<br>
+      </br>
+      Some posts take time to load. Either wait or generate a new one!
+    </p>
     
     <Generation 
     subreddit={subreddit} 
@@ -121,7 +129,7 @@ function App(){
     handleCustomChange={handleCustomChange}
     handleNsfwChange={handleNsfwChange}
     />
-
+    <br/>
     <Meme imgRef={imgRef} 
     memeTitle={memeTitle} 
     descriptionText={descriptionText}
