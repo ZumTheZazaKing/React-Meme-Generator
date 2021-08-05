@@ -38,7 +38,7 @@ function Meme(props){
   return <div id="memeContainer">
     <h2>{props.memeTitle}</h2>
     <p>{props.subredditText}<br/>
-    {props.descriptionText}<br/>
+    {props.descriptionText}&nbsp;{props.upvotes}<br/>
     <a href={props.originalLink}>{props.originalLink}</a><br/></p>
 
     <a href={props.downloadLink} target="_blank" rel="noreferrer">
@@ -64,6 +64,7 @@ function App(){
   let [subredditText, setSubredditText] = useState("");
   let [originalLink, setOriginalLink] = useState("");
   let [downloadLink, setDownloadLink] = useState("");
+  let [upvotes, setUpvotes] = useState("");
 
   let imgRef = useRef();
 
@@ -79,8 +80,17 @@ function App(){
 
     let apiUrl = "https://meme-api.herokuapp.com/gimme";
 
-    apiUrl = subreddit==="" ? apiUrl : apiUrl + `/${subreddit}`;
-    apiUrl = customSubreddit==="" ? apiUrl : apiUrl + `/${customSubreddit}`;
+    //apiUrl = subreddit==="" ? apiUrl : apiUrl + `/${subreddit}`;
+
+    if(subreddit==="" && customSubreddit===""){
+      console.log("hello")
+    } else if (subreddit!=="" && customSubreddit===""){
+      apiUrl = apiUrl + `/${subreddit}`;
+    } else if (subreddit==="" && customSubreddit!==""){
+      apiUrl = apiUrl + `/${customSubreddit}`;
+    } else if (subreddit!=="" && customSubreddit!==""){
+      apiUrl = apiUrl + `/${customSubreddit}`;
+    }
 
     fetch(apiUrl)
     .then(res => handleErrors(res))
@@ -100,6 +110,7 @@ function App(){
       setOriginalLink(data.postLink);
       setSubredditText(`Freshly picked from ${data.subreddit}`);
       setDownloadLink(data.url);
+      setUpvotes(`| ${data.ups} Upvotes`);
     
     }).catch(err => {
       imgRef.current.src = "";
@@ -108,6 +119,7 @@ function App(){
       setDescriptionText("");
       setOriginalLink("");
       setSubredditText("");
+      setUpvotes("");
     });
 
   }
@@ -135,7 +147,8 @@ function App(){
     descriptionText={descriptionText}
     originalLink={originalLink}
     subredditText={subredditText}
-    downloadLink={downloadLink}/>
+    downloadLink={downloadLink}
+    upvotes={upvotes}/>
     
   </div>
 }
